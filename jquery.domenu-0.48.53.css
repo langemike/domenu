@@ -25,7 +25,7 @@
   font-size:          13px;
   color:              #444;
   text-shadow:        0 1px 0 #fff;
-  width:              30%;
+  width:              45%;
 }
 
 .dd-edit-box input::selection,
@@ -42,7 +42,7 @@
 
 
 .dd-edit-box select {
-  width: 30%;
+  width: 45%;
 }
 
 .dd-edit-box > * {
