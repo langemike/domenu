@@ -1380,6 +1380,7 @@
     var lists  = this.first(),
         retval = null,
         domenu = $(this),
+        args = Array.prototype.slice.call(arguments, -1),
         plugin, pPlugin;
 
     lists.each(function() {
@@ -1402,13 +1403,13 @@
         if(typeof params === 'string') {
           if(typeof pPlugin[params] === 'function') {
             // proxy
-            retval = pPlugin[params]();
+            retval = pPlugin[params].apply(pPlugin, args);
           }
           else if(typeof pPlugin.getPluginOptions()[params] !== 'undefined') {
             retval = pPlugin.getPluginOptions()[params];
           }
           else if(typeof plugin[params] === 'function') {
-            retval = plugin[params]();
+            retval = plugin[params].apply(plugin, args);
           }
         }
       }
